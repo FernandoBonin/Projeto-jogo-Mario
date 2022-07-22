@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.game-board {
+  width: 100%;
+  height: 500px;
+  border-bottom: 15px solid green;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#87ceeb, #c1e7f7);
+}
+
+.pipe {
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  height: 90px;
+}
+
+.pipeAnimation {
+  animation: pipe-animation 1s infinite linear;
+}
+
+.mario {
+  width: 200px;
+  position: absolute;
+  bottom: 0;
+  left: -25px;
+}
+
+.marioDead {
+  margin-left: 70px;
+  width: 95px;
+  animation: marioDeadAnimation 0.5s ease-in;
+}
+
+.jump {
+  animation: jump 500ms ease-out;
+}
+
+.clouds {
+  position: absolute;
+  width: 600px;
+}
+
+.cloudsAnimation {
+  animation: clouds-animation 15s infinite linear;
+}
+
+.gameOver {
+  position: absolute;
+  left: 25%;
+  top: 10%;
+  transform: rotate(-10deg);
+  animation: gameOver-animation 1.8s infinite;
+}
+
+.alignBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btnPlay {
+  width: 220px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.alignBtn button {
+  border: none;
+}
+
+.btnPlay:hover {
+  animation: btnPlayAgain 1s linear infinite;
+}
+
+@keyframes pipe-animation {
+  from {
+    right: -80px;
+  }
+
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 180px;
+  }
+  50% {
+    bottom: 180px;
+  }
+  60% {
+    bottom: 180px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes clouds-animation {
+  from {
+    right: -600px;
+  }
+
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes gameOver-animation {
+  0% {
+    width: 700px;
+    height: 400px;
+  }
+  50% {
+    width: 650px;
+    height: 350px;
+  }
+  100% {
+    width: 700px;
+    height: 400px;
+  }
+}
+
+@keyframes btnPlayAgain {
+  0% {
+    width: 220px;
+    height: 100px;
+  }
+  50% {
+    width: 230px;
+    height: 110px;
+  }
+  100% {
+    width: 220px;
+    height: 100px;
+  }
+}
+
+@keyframes marioDeadAnimation {
+  0% {
+    bottom: 55px;
+  }
+  20% {
+    bottom: 70px;
+  }
+  40% {
+    bottom: 80px;
+    width: 105px;
+  }
+  60% {
+    bottom: 100px;
+    width: 110px;
+  }
+  70% {
+    bottom: 60px;
+    width: 115px;
+  }
+  80% {
+    bottom: 30px;
+    width: 125px;
+  }
+  100% {
+    bottom: -150px;
+  }
+}
